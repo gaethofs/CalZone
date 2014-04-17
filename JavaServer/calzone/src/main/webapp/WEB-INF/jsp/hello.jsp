@@ -228,6 +228,14 @@
 
   <body>
 
+	<sec:authorize access="isAuthenticated()">
+		<jsp:include page="/WEB-INF/jsp/NavigationBarSignedIn.jsp" />
+	</sec:authorize>
+	
+	<sec:authorize access="!isAuthenticated()">
+		<jsp:include page="/WEB-INF/jsp/NavigationBar.jsp" />
+	</sec:authorize>
+	
 	<div class="container-fluid">
       <div class="row">
         <div class="col-sm-12 col-md-12 main">
